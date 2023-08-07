@@ -1,0 +1,28 @@
+#:kivy 1.10.0
+<TimerEx>:
+    start_btn:start_btn
+    stop_btn:stop_btn
+    text_input: text_input
+    time_text: time_text
+    orientation: 'vertical'
+    TextInput:
+        id:text_input
+        input_filter: 'int'
+        multiline: False
+        size_hint:(1,0.3)
+        on_text_validate:root.set_time()
+    Label:
+        id:time_text
+        font_size: '50sp'
+        text: '0'
+    Button:
+        id:start_btn
+        text:'Start'
+        disabled:True
+        on_press: root.start_timer()
+    Button:
+        id:stop_btn
+        text:'Stop'
+        disabled:True
+        on_press: root.stop_timer()
+
